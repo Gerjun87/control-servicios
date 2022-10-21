@@ -7,23 +7,39 @@ export const addTask = (event) => {
     event.preventDefault();
     const list = document.querySelector("[data-list]");
     const input = document.querySelector("[data-form-input]");
+    const input1 = document.querySelector("[data-form-input1]");
+    const input2 = document.querySelector("[data-form-input2]");
+    const input3 = document.querySelector("[data-form-input3]");
+    const input4 = document.querySelector("[data-form-input4]");
     const calendar = document.querySelector("[data-form-date]");
 
     const value = input.value;
+    const value1 = input1.value;
+    const value2 = input2.value;
+    const value3 = input3.value;
+    const value4 = input4.value;
     const date = calendar.value;
     const dateFormat = moment(date).format("DD/MM/YYYY");
 
-    if (value == "" || date == "") {
+    if (value == "" || value1 == "" || value2 == "" || value3 == "" || value4 == "" || date == "") {
         return;
     }
 
     input.value = "";
+    input1.value = "";
+    input2.value = "";
+    input3.value = "";
+    input4.value = "";
     calendar.value = "";
 
     const complete = false;
 
     const taskObj = {
         value,
+        value1,
+        value2,
+        value3,
+        value4,
         dateFormat,
         complete,
         id: uuid.v4(),
@@ -38,7 +54,7 @@ export const addTask = (event) => {
     displayTasks();
 };
 
-export const createTask = ({ value, dateFormat, complete, id }) => {
+export const createTask = ({ value, value1, value2, value3, value4, dateFormat, complete, id }) => {
     const task = document.createElement("li");
     task.classList.add("card");
 
@@ -52,10 +68,22 @@ export const createTask = ({ value, dateFormat, complete, id }) => {
         check.classList.toggle("far");
     }
     const titleTask = document.createElement("span");
+    const titleTask1 = document.createElement("span");
+    const titleTask2 = document.createElement("span");
+    const titleTask3 = document.createElement("span");
+    const titleTask4 = document.createElement("span");
     titleTask.classList.add("task");
-    titleTask.innerHTML = value;
+    titleTask.innerHTML = "Marca: " + value + ".";
+    titleTask1.innerHTML = "Mod.: " + value1 + ".";
+    titleTask2.innerHTML = "N°: " + value2 + ".";
+    titleTask3.innerHTML = "Sr/a: " + value3 + ".";
+    titleTask4.innerHTML = "$" + value4;
     taskContent.appendChild(check);
     taskContent.appendChild(titleTask);
+    taskContent.appendChild(titleTask1);
+    taskContent.appendChild(titleTask2);
+    taskContent.appendChild(titleTask3);
+    taskContent.appendChild(titleTask4);
 
     const dateElement = document.createElement("span");
     dateElement.innerHTML = dateFormat;
