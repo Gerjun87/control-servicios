@@ -27,7 +27,7 @@ form {
 }
 
 .mainCard {
-    width: 40vw;
+    width: 80vw;
     border-radius: 25px;
     background-color: #fff;
     padding: 25px;
@@ -43,18 +43,46 @@ form {
 
 .inputForm {
     border: none;
-    padding: 10px;
+    padding: 5px 10px;
     border: 1px solid #eee;
     outline: none;
-    width: 35%;
+    width: 10%;
+}
+
+.inputForm-cliente {
+    border: none;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    outline: none;
+    width: 15%;
+}
+
+.inputForm-pago {
+    border: none;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    outline: none;
+    width: 10%;
+}
+
+.inputForm-date {
+    width: 15%;
 }
 
 .inputForm::placeholder {
     padding: 0px;
 }
 
+.inputForm-cliente::placeholder {
+    padding: 0px;
+}
+
+.inputForm-pago::placeholder {
+    padding: 0px;
+}
+
 .btnCreate {
-    padding: 10px 15px;
+    padding: 5px 15px;
     background-image: linear-gradient(
         109.6deg,
         rgba(62, 161, 219, 1) 11.2%,
@@ -64,6 +92,8 @@ form {
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
+    margin: 1%;
+    width: 15%;
 }
 
 .cardsList {
@@ -89,8 +119,10 @@ form {
     position: relative;
 }
 
-.task {
-    padding: 10px;
+span {
+    padding: 0px 10px;
+    align-items: center;
+    text-align: center;
 }
 
 .icon {
@@ -129,5 +161,4 @@ form {
 .date {
     width: 100%;
     padding: 15px;
-
 }
